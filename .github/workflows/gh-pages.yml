@@ -33,13 +33,12 @@ jobs:
       - name: Build
         run: |
           cargo make build_release
-          cp index.html ./pkg/index.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./pkg
+          publish_dir: ./
           allow_empty_commit: true
           force_orphan: true
           user_name: 'github-actions[bot]'

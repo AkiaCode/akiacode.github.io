@@ -1,0 +1,21 @@
+{
+  "name": "akiacode",
+  "collaborators": [
+    "Akiacode <catry.me@gmail.com>"
+  ],
+  "description": "App Description",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akiacode/akiacode.github.io"
+  },
+  "files": [
+    "package_bg.wasm",
+    "package.js",
+    "package.d.ts"
+  ],
+  "module": "package.js",
+  "types": "package.d.ts",
+  "sideEffects": false
+}

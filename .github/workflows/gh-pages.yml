@@ -39,6 +39,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
+          exclude_assets : '.github,LICENSE,Cargo.lock,*.toml,.gitignore,README.md,src,target'
           allow_empty_commit: true
           force_orphan: true
           user_name: 'github-actions[bot]'

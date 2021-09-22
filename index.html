@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="modulepreload" href="/build/package.js" as="script" type="text/javascript">
-    <link rel="preload" href="/build/package_bg.wasm" as="fetch" type="application/wasm" crossorigin="anonymous">
+    <link rel="modulepreload" href="/akiacode.js" as="script" type="text/javascript">
+    <link rel="preload" href="/akiacode_bg.wasm" as="fetch" type="application/wasm" crossorigin="anonymous">
 </head>
 
 <body>
     <section id="app"></section>
     <script type="module">
-        import init from '/build/package.js';
-        init('/build/package_bg.wasm');
+        import init from '/akiacode.js';
+        init('/akiacode_bg.wasm');
     </script>
 </body>
 

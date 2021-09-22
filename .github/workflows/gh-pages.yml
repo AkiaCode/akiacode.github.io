@@ -33,6 +33,7 @@ jobs:
       - name: Build
         run: |
           cargo make build_release
+          ls
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -41,7 +42,6 @@ jobs:
           publish_dir: ./
           exclude_assets : '.github,LICENSE,Cargo.lock,*.toml,.gitignore,README.md,src,target'
           allow_empty_commit: true
-          force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           cname: catry.tech

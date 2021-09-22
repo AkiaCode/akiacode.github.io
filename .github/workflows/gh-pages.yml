@@ -26,7 +26,9 @@ jobs:
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Run cargo install binary crates
-        run: cargo install cargo-make wasm-pack
+        run: |
+          cargo install cargo-make
+          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
       - name: Build
         run: cargo make build && cp index.html ./pkg/index.html
@@ -36,6 +38,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./pkg
+          allow_empty_commit: true
+          force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           cname: catry.tech

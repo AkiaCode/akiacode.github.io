@@ -28,10 +28,12 @@ jobs:
       - name: Run cargo install binary crates
         run: |
           cargo install cargo-make
-          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+          bash -c curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
       - name: Build
-        run: cargo make build && cp index.html ./pkg/index.html
+        run: |
+          cargo make build_release
+          bash -c cp index.html ./pkg/index.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

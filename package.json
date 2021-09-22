@@ -11,11 +11,11 @@
     "url": "https://github.com/akiacode/akiacode.github.io"
   },
   "files": [
-    "package_bg.wasm",
-    "package.js",
-    "package.d.ts"
+    "akiacode_bg.wasm",
+    "akiacode.js",
+    "akiacode.d.ts"
   ],
-  "module": "package.js",
-  "types": "package.d.ts",
+  "module": "akiacode.js",
+  "types": "akiacode.d.ts",
   "sideEffects": false
 }

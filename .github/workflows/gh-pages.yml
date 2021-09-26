@@ -26,17 +26,17 @@ jobs:
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Run cargo install cargo-make
-        if: hashFiles('cargo-make') == ''
+        if: hashFiles('**/cargo-make') == ''
         run: cargo install -f cargo-make
       - name: Run cargo install wasm-pack
-        if: hashFiles('wasm-pack') == ''
+        if: hashFiles('**/wasm-pack') == ''
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
       - name: Build
         run: |
           cargo make build_release
           cp -r ./build/* ./
-          sed -ie 's/pkg\//g' ./index.html
+          sed -r 'pkg\//g' ./index.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

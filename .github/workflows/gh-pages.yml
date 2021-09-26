@@ -36,7 +36,13 @@ jobs:
         run: |
           cargo make build_release
           cp -r ./build/* ./
-          sed  -i -e "s|pkg\/|g" ./index.html
+
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: "pkg\/"
+          replace: ""
+          include: "index.html"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

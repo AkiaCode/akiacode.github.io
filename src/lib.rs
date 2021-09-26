@@ -11,7 +11,7 @@ use seed::{prelude::*, *};
 
 // `init` describes what should happen when your app started.
 fn init(_: Url, _: &mut impl Orders<Msg>) -> Model {
-    Model { counter: 0 }
+    Model { }
 }
 
 // ------ ------
@@ -19,9 +19,7 @@ fn init(_: Url, _: &mut impl Orders<Msg>) -> Model {
 // ------ ------
 
 // `Model` describes our app state.
-struct Model {
-    counter: i32,
-}
+struct Model;
 
 // ------ ------
 //    Update
@@ -30,15 +28,10 @@ struct Model {
 // (Remove the line below once any of your `Msg` variants doesn't implement `Copy`.)
 #[derive(Copy, Clone)]
 // `Msg` describes the different events you can modify state with.
-enum Msg {
-    Increment,
-}
+enum Msg {}
 
 // `update` describes how to handle each `Msg`.
-fn update(msg: Msg, model: &mut Model, _: &mut impl Orders<Msg>) {
-    match msg {
-        Msg::Increment => model.counter += 1,
-    }
+fn update(_: Msg, _: &mut Model, _: &mut impl Orders<Msg>) {
 }
 
 // ------ ------
@@ -46,7 +39,7 @@ fn update(msg: Msg, model: &mut Model, _: &mut impl Orders<Msg>) {
 // ------ ------
 
 // `view` describes what to display.
-fn view(_model: &Model) -> Node<Msg> {
+fn view(_: &Model) -> Node<Msg> {
     div![
         "This is a counter: test",
     ]

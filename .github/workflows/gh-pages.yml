@@ -33,6 +33,8 @@ jobs:
       - name: Build
         run: |
           cargo make build_release
+          cp -r ./build/* ./
+          sed 's/pkg\//g' index.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

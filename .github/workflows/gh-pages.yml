@@ -33,7 +33,6 @@ jobs:
       - name: Build
         run: |
           cargo make build_release
-          cp -r ./build/* ./
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

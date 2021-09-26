@@ -97,10 +97,6 @@ fn view(model: &Model) -> Node<Msg> {
             St::FontFamily => "Helvetica, Arial, sans-serif",
         },
         div!{
-            style!{
-                St::Width => px(350),
-                St::Height => px(350),
-            },
             h1! {
                 "👩‍💻 Welcome, I`m ",
                 a! {

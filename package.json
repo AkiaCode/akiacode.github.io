@@ -17,5 +17,7 @@
   ],
   "module": "akiacode.js",
   "types": "akiacode.d.ts",
-  "sideEffects": false
+  "sideEffects": [
+    "./snippets/*"
+  ]
 }
